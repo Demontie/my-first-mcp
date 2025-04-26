@@ -1,6 +1,6 @@
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
-import { getProductsTool } from "./tools/products";
+import { getProductsTool } from "./tools/products.ts";
 
 async function initializeServer() {
   // Create server instance

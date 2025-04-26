@@ -1,6 +1,7 @@
 {
   "name": "my-first-mcp",
   "version": "1.0.0",
+  "type": "module",
   "main": "src/index.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -10,7 +11,12 @@
     "@modelcontextprotocol/sdk": "^1.5.0",
     "zod": "^3.22.4"
   },
-  "keywords": [],
+  "devDependencies": {
+    "@types/node": "^20.11.24"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
   "author": "Demontie Ferreira",
   "license": "ISC",
   "description": "My first MCP"

@@ -1,10 +1,5 @@
 import { z } from "zod";
-import {
-  McpResponse,
-  McpTextContent,
-  ProductParams,
-  ProductsResponse,
-} from "../types";
+import * as types from "../types/index.ts";
 
 export const getProductsTool = {
   name: "get_products",
@@ -27,10 +22,10 @@ export const getProductsTool = {
       .default(10)
       .describe("Maximum number of products to return"),
   },
-  handler: async (params: ProductParams): Promise<McpResponse> => {
+  handler: async (params: types.ProductParams): Promise<types.McpResponse> => {
     try {
       const { q, ...rest } = params;
-      let result: ProductsResponse;
+      let result: types.ProductsResponse;
       let response;
       if (q) {
         response = await fetch(`https://dummyjson.com/products/search?q=${q}`, {
@@ -57,7 +52,7 @@ export const getProductsTool = {
         throw new Error("No results returned from API");
       }
 
-      const content: McpTextContent = {
+      const content: types.McpTextContent = {
         type: "text",
         text: `Products Results:\n\n${JSON.stringify(
           result.products,
