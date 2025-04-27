@@ -35,47 +35,6 @@ This project demonstrates the use of MCP (Model Context Protocol) server that re
 - Docker and Docker Compose
 - WSL2 (if using Windows)
 
-### Using Docker (Recommended)
-
-1. Clone the repository:
-
-```bash
-git clone [repository-url]
-cd my-first-mcp
-```
-
-2. Install dependencies:
-
-```bash
-npm install
-```
-
-3. Compile TypeScript:
-
-```bash
-npm run build
-```
-
-4. Start containers using Docker Compose:
-
-```bash
-docker-compose up -d
-```
-
-### ⚠️ Important Notes
-
-#### For WSL Users
-
-If you're using WSL on Windows, you might encounter connection issues when using "localhost". Follow these steps:
-
-1. Find your WSL IP:
-
-```bash
-ip addr show eth0 | grep -oP '(?<=inet\s)\d+(\.\d+){3}'
-```
-
-2. Use this IP instead of "localhost" in the PostgreSQL connection string
-
 ## Cursor Configuration
 
 To configure this MCP server with Cursor:
